@@ -44,25 +44,29 @@ Spring Boot application with JPA, Hibernate, and MySQL.
 REST APIs for Category and Product CRUD operations.
 Annotations-based configuration (no XML configuration).
 Pagination for server-side data fetching.
-Instructions:
-Clone the repository:
+## Instructions:
 
-bash
-Copy code
-git clone https://github.com/your-username/your-repository-name.git
-Configure your database connection in application.properties:
+1. **Clone the repository:**
 
-properties
-Copy code
-spring.datasource.url=jdbc:mysql://localhost:3306/your-database-name
-spring.datasource.username=your-username
-spring.datasource.password=your-password
-Run the Spring Boot application:
+    ```bash
+    git clone https://github.com/your-username/your-repository-name.git
+    ```
 
-bash
-Copy code
-./mvnw spring-boot:run
-Test the APIs using Postman or any HTTP client.
+2. **Configure your database connection in `application.properties`:**
+
+    ```properties
+    spring.datasource.url=jdbc:mysql://localhost:3306/your-database-name
+    spring.datasource.username=your-username
+    spring.datasource.password=your-password
+    ```
+
+3. **Run the Spring Boot application:**
+
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+
+4. **Test the APIs using Postman or any HTTP client.**
 
 API Documentation:
 GET /api/categories?page=3: Fetch all categories (paginated).

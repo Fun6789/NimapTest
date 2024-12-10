@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.example.assignment.nimap.entity.Product;
 
 public interface ProductService {
 
-	 public Page<Product> getAllProducts(int page, int size);
+	 public Page<Product> getAllProducts(Pageable pageable);
 	 
 	 public List<Product> createProduct(List<Product> product);
 	 

@@ -1,7 +1,11 @@
 package com.example.assignment.nimap.controller;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,10 +27,10 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping
-    public Page<Category> getAllCategories(@RequestParam(defaultValue = "0") int page,
-                                           @RequestParam(defaultValue = "10") int size) {
-        return categoryService.getAllCategories(page, size);
+    public Page<Category> getAllCategories(@RequestParam int page) {
+        return categoryService.getAllCategories(PageRequest.of(page, 2));
     }
+
 
     @PostMapping
     public Category createCategory(@RequestBody Category category) {

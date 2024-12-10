@@ -5,12 +5,14 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.assignment.nimap.entity.Product;
 import com.example.assignment.nimap.repository.ProductRepository;
 import com.example.assignment.nimap.service.ProductService;
+
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -18,8 +20,8 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
     private ProductRepository productRepository;
 
-    public Page<Product> getAllProducts(int page, int size) {
-        return productRepository.findAll(PageRequest.of(page, size));
+	public Page<Product> getAllProducts(Pageable pageable) {
+        return productRepository.findAll(pageable);
     }
     
     
